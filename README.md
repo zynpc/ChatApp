@@ -54,9 +54,9 @@ https://localhost:7125/AgentDashboard
 ## 5. Test HTML ve Widget Kullanımı
 Projeyi başlattığınızda (F5 veya Ctrl+F5), launchSettings.json içindeki URL ve port geçerli olacaktır.
 
-test.html dosyasını tarayıcınızda açın.
+testhtml.html dosyasını tarayıcınızda açın.
 
-test.html dosyasındaki
+testhtml.html dosyasındaki
 ```
 <script src="/widget.js" data-endpoint="YOUR_ENDPOINT_URL"></script>
 ```
