@@ -12,10 +12,12 @@
 ## 2. Veritabanı Ayarları
 `appsettings.json` içindeki bağlantıyı kendi bilgisayarınıza göre düzenleyin:
 
-```json
+```bash
 "ConnectionStrings": {
     "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=ChatAppDb;Trusted_Connection=True;TrustServerCertificate=True;"
 }
+`````
+bash
 
 ## 3. Veritabanını Oluşturma
 
@@ -23,11 +25,13 @@ Visual Studio’da Package Manager Console kullanarak:
 
 ```powershell
 Update-Database
-
+```
+powershell
 veya CLI ile:
-
+```powershell
 dotnet ef database update
-
+```
+powershell
 
 ## 4. Uygulamayı Çalıştırma
 
@@ -35,7 +39,7 @@ Projeyi Visual Studio veya VS Code ile açın.
 
 launchSettings.json dosyasında uygulamanın çalışacağı port ve URL ayarlanmıştır:
 
-"applicationUrl": "https://localhost:7125;http://localhost:5125"
+"applicationUrl": "https://localhost:7125;http://localhost:5001"
 
 Uygulamayı başlatmak için F5 veya Ctrl+F5 tuşlarını kullanın.
 
