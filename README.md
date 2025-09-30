@@ -7,7 +7,7 @@ Proje kapsamında hem kullanıcı tarafında gömülebilir bir chat widget, hem 
 
 -Gerçek Zamanlı Mesajlaşma: Kullanıcı ve operatör arasındaki mesajlar SignalR ile anlık olarak iletilir.
 
--Birden Fazla Sohbet: Operatör aynı anda birden fazla kullanıcı ile ayrı ayrı sohbet başlatabilir ve yönetebilir.
+-Birden Fazla Sohbet: Operatör aynı anda birden fazla kullanıcı ile ayrı ayrı sohbet başlatabilir ve yönetebilir. Ayrıca, operatör başka bir kullanıcıyla konuşurken farklı bir kullanıcıdan yeni mesaj gelirse ilgili sohbet penceresinde kırmızı uyarı işareti belirir.
 
 -Yazıyor Göstergesi: Hem kullanıcı hem de operatör için "yazıyor..." bildirimi görünür.
 
