@@ -1,0 +1,231 @@
+﻿@page
+@model ChatApp.Pages.AgentDashboardModel
+@{
+    ViewData["Title"] = "Agent Dashboard";
+}
+<h2 class="dashboard-title">Agent Dashboard</h2>
+
+<div class="stats-container">
+    <div class="stat-card">
+        <h3>Toplam Kullanıcı</h3>
+        <p id="totalUsers">@Model.TotalUsers</p>
+    </div>
+    <div class="stat-card">
+        <h3>Aktif Oturumlar</h3>
+        <p id="activeSessions">@Model.ActiveSessions</p>
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="chart-card">
+        <h3> Günlük Mesaj Sayıları (Son 7 Gün)</h3>
+        <canvas id="dailyMessagesChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3> Kullanıcı Bazlı Mesaj Sayısı</h3>
+        <canvas id="userStatsChart"></canvas>
+    </div>
+
+    <div class="chart-card small">
+        <h3> Mesaj Tipi Dağılımı</h3>
+        <canvas id="typeDistributionChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let dailyMessagesChart, userStatsChart, typeDistributionChart;
+
+    async function fetchStats() {
+        const response = await fetch('/AgentDashboard?handler=Stats');
+        return await response.json();
+    }
+
+    
+    function shortenUserId(userId) {
+        if (userId.length > 12) {
+            return `${userId.substring(0, 8)}...${userId.substring(userId.length - 4)}`;
+        }
+        return userId;
+    }
+
+    async function updateDashboard() {
+        const data = await fetchStats();
+
+        // Toplam kullanıcı ve aktif oturum
+        document.getElementById("totalUsers").innerText = data.totalUsers;
+        document.getElementById("activeSessions").innerText = data.activeSessions;
+
+        // Günlük mesaj sayıları (line chart)
+        if (!dailyMessagesChart) {
+            dailyMessagesChart = new Chart(document.getElementById("dailyMessagesChart"), {
+                type: 'line',
+                data: {
+                    labels: data.dates,
+                    datasets: [{
+                        label: 'Mesaj Sayısı',
+                        data: data.messageCounts,
+                        borderColor: '#1D3557',
+                        backgroundColor: 'rgba(29,53,87,0.2)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: { left: 10, right: 10, top: 20, bottom: 30 } },
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                autoSkip: false
+                            }
+                        }
+                    }
+                }
+            });
+        } else {
+            dailyMessagesChart.data.labels = data.dates;
+            dailyMessagesChart.data.datasets[0].data = data.messageCounts;
+            dailyMessagesChart.update();
+        }
+
+        // Kullanıcı bazlı mesaj grafiği (bar chart)
+        const userLabels = data.userStats.map(u => shortenUserId(u.userId));
+        const userCounts = data.userStats.map(u => u.messageCount);
+
+        if (!userStatsChart) {
+            userStatsChart = new Chart(document.getElementById("userStatsChart"), {
+                type: 'bar',
+                data: {
+                    labels: userLabels,
+                    datasets: [{
+                        label: 'Mesaj Sayısı',
+                        data: userCounts,
+                        backgroundColor: ['#E63946', '#F1FAEE', '#A8DADC', '#457B9D', '#1D3557']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: { left: 10, right: 10, top: 20, bottom: 50 } },
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                autoSkip: false
+                            }
+                        }
+                    }
+                }
+            });
+        } else {
+            userStatsChart.data.labels = userLabels;
+            userStatsChart.data.datasets[0].data = userCounts;
+            userStatsChart.update();
+        }
+
+        // Mesaj tipi dağılım grafiği (pie chart)
+        const typeLabels = data.typeDistribution.map(t => t.type);
+        const typeCounts = data.typeDistribution.map(t => t.count);
+
+        if (!typeDistributionChart) {
+            typeDistributionChart = new Chart(document.getElementById("typeDistributionChart"), {
+                type: 'pie',
+                data: {
+                    labels: typeLabels,
+                    datasets: [{
+                        data: typeCounts,
+                        backgroundColor: ['#A8DADC', '#457B9D', '#E63946']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+        } else {
+            typeDistributionChart.data.labels = typeLabels;
+            typeDistributionChart.data.datasets[0].data = typeCounts;
+            typeDistributionChart.update();
+        }
+    }
+
+    
+    updateDashboard();
+    // 10 saniyede bir yeniler
+    setInterval(updateDashboard, 10000);
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #F8F9FA;
+    }
+
+    .dashboard-title {
+        text-align: center;
+        margin: 20px 0;
+        color: #1D3557;
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 200px;
+    }
+
+        .stat-card h3 {
+            margin-bottom: 10px;
+            color: #457B9D;
+        }
+
+        .stat-card p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1D3557;
+        }
+
+    .charts-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px; 
+        margin: 0 auto;
+        max-width: 900px;
+    }
+
+    .chart-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        height: 450px;
+    }
+
+        .chart-card.small {
+            height: 350px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .chart-card h3 {
+            margin-bottom: 15px;
+            color: #1D3557;
+            text-align: center;
+        }
+</style>
