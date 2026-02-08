@@ -113,22 +113,22 @@ Eğer uygulamayı farklı bir portta çalıştırıyorsanız, ekstra bir ayar ya
 
 ## Ekran Görüntüleri
 
-<img width="1920" height="965" alt="Ekran Görüntüsü (1662)" src="https://github.com/user-attachments/assets/2c4bc113-b002-4458-8673-3785013da74d" />
+<img width="1920" height="965" alt="Ekran Görüntüsü (1662)" src="Screenshots/Ekran_Goruntusu_(1664).png" />
 
 
-<img width="1920" height="1014" alt="Ekran Görüntüsü (1663)" src="https://github.com/user-attachments/assets/46e781ad-d155-4fe6-af85-3fd4f4f37a13" />
+<img width="1920" height="1014" alt="Ekran Görüntüsü (1663)" src="Screenshots/Ekran_Goruntusu_(1663).png" />
 
 
-<img width="1920" height="919" alt="Ekran Görüntüsü (1664)" src="https://github.com/user-attachments/assets/06337290-93fe-48c0-8480-e80864ebf3bb" />
+<img width="1920" height="919" alt="Ekran Görüntüsü (1664)" src="Screenshots/Ekran_Goruntusu_(1662).png" />
 
 
-<img width="1920" height="1017" alt="Ekran Görüntüsü (1667)" src="https://github.com/user-attachments/assets/b9abbf0a-5fc1-4bbb-958b-9acb53e4219c" />
+<img width="1920" height="1017" alt="Ekran Görüntüsü (1667)" src="Screenshots/Ekran_Goruntusu_(1667).png" />
 
 
-<img width="1920" height="1014" alt="Ekran Görüntüsü (1669)" src="https://github.com/user-attachments/assets/39a3584d-57a3-4542-9833-b72f10776fe4" />
+<img width="1920" height="1014" alt="Ekran Görüntüsü (1669)" src="Screenshots/Ekran_Goruntusu_(1669).png" />
 
 
-<img width="1920" height="1021" alt="Ekran Görüntüsü (1670)" src="https://github.com/user-attachments/assets/98197eef-fc7d-4122-bcf7-53aa045210d8" />
+<img width="1920" height="1021" alt="Ekran Görüntüsü (1670)" src="Screenshots/Ekran_Goruntusu_(1670).png" />
 
 
 
