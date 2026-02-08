@@ -113,22 +113,27 @@ Eğer uygulamayı farklı bir portta çalıştırıyorsanız, ekstra bir ayar ya
 
 ## Ekran Görüntüleri
 
-<img width="1920" height="965" alt="Ekran Görüntüsü (1662)" src="Screenshots/Ekran_Goruntusu_(1664).png" />
+<img width="1920" height="965" alt="Ekran Görüntüsü (1664)" src="[Screenshots/Ekran_Goruntusu_(1664).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1664).png
+)" />
 
 
-<img width="1920" height="1014" alt="Ekran Görüntüsü (1663)" src="Screenshots/Ekran_Goruntusu_(1663).png" />
+<img width="1920" height="1014" alt="Ekran Görüntüsü (1663)" src="[Screenshots/Ekran_Goruntusu_(1663).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1663).png
+)" />
 
 
-<img width="1920" height="919" alt="Ekran Görüntüsü (1664)" src="Screenshots/Ekran_Goruntusu_(1662).png" />
+<img width="1920" height="919" alt="Ekran Görüntüsü (1662)" src="[Screenshots/Ekran_Goruntusu_(1662).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1662).png
+)" />
 
 
-<img width="1920" height="1017" alt="Ekran Görüntüsü (1667)" src="Screenshots/Ekran_Goruntusu_(1667).png" />
+<img width="1920" height="1017" alt="Ekran Görüntüsü (1667)" src="[Screenshots/Ekran_Goruntusu_(1667).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1667).png
+)" />
 
 
-<img width="1920" height="1014" alt="Ekran Görüntüsü (1669)" src="Screenshots/Ekran_Goruntusu_(1669).png" />
+<img width="1920" height="1014" alt="Ekran Görüntüsü (1669)" src="[Screenshots/Ekran_Goruntusu_(1669).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1669).png
+)" />
 
 
-<img width="1920" height="1021" alt="Ekran Görüntüsü (1670)" src="Screenshots/Ekran_Goruntusu_(1670).png" />
+<img width="1920" height="1021" alt="Ekran Görüntüsü (1670)" src="[Screenshots/Ekran_Goruntusu_(1670).png](https://github.com/zynpc/ChatApp/blob/master/Screenshots/Ekran%20G%C3%B6r%C3%BCnt%C3%BCs%C3%BC%20(1670).png)" />
 
 
 
